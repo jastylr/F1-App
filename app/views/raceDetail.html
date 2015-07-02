@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-12">  
+    <div class="race-result">
+      <div class="race-date-round">
+        <div class="race-round">Round {{raceResult.round}}</div> 
+        <div class="race-date">{{raceResult.date|date:'mediumDate'}}</div>
+      </div>
+      <div class="race-header">
+        <div class="race-circuit-flag"><img ng-src="images/flags/{{raceResult.Circuit.Location.country}}.png" alt=""></div>
+        <div class="race-circuit">
+          <h3 class="race-title">
+            {{raceResult.raceName}}
+          </h3>
+          <div class="race-circuit-name">
+            {{raceResult.Circuit.circuitName}}, {{raceResult.Circuit.Location.locality}}, {{raceResult.Circuit.Location.country}}
+          </div>              
+        </div>
+        <div class="race-winner">
+          <div class="p1-driver">
+            <img ng-src="images/helmets/{{raceResult.Results[0].Driver.driverId}}.png" alt="">
+          </div>
+          <div class="p1-constructor">
+            <img ng-src="images/cars/{{raceResult.Results[0].Constructor.constructorId}}.png" alt="">
+          </div>
+        </div>
+        <div class="race-circuit-map">
+          <img ng-src="images/circuits/{{raceResult.Circuit.circuitName}}.png" alt="{{raceResult.Circuit.circuitName}}">
+        </div>
+      </div> 
+      <div class="resultList">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Pos.</th>
+                <th>Driver</th>
+                <th>Team</th>
+                <th>Started</th>
+                <th>Laps</th>
+                <th>Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tr ng-repeat="result in raceResult.Results">
+              <td>{{result.position}}</td>
+              <td>
+                <a ng-href="#/driver/{{result.Driver.driverId}}">{{result.Driver.givenName}} {{result.Driver.familyName}}</a>
+              </td>
+              <td>
+                <a ng-href="{{result.Constructor.url}}"><img class="constructor-sm" ng-src="images/cars/{{result.Constructor.constructorId}}.png" alt="{{result.Constructor.name}}" title="{{result.Constructor.name}}"></a>
+              </td>
+              <td>{{result.grid}}</td>
+              <td>{{result.laps}}</td>
+              <td>{{result.Time.time}}</td>
+              <td>{{result.status}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
