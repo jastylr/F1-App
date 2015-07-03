@@ -15,18 +15,16 @@
             {{raceResult.Circuit.circuitName}}, {{raceResult.Circuit.Location.locality}}, {{raceResult.Circuit.Location.country}}
           </div>              
         </div>
-        <div class="race-winner">
-          <div class="p1-driver">
-            <img ng-src="images/helmets/{{raceResult.Results[0].Driver.driverId}}.png" alt="">
-          </div>
-          <div class="p1-constructor">
-            <img ng-src="images/cars/{{raceResult.Results[0].Constructor.constructorId}}.png" alt="">
-          </div>
+      </div>
+      <div class="race-winner">
+        <h4>Winner: {{raceResult.Results[0].Driver.givenName}} {{raceResult.Results[0].Driver.familyName}} <img class="p1-driver" ng-src="images/helmets/{{raceResult.Results[0].Driver.driverId}}.png" alt=""></h4>
+        <div class="p1-constructor">
+          <img ng-src="images/cars/{{raceResult.Results[0].Constructor.constructorId}}.png" alt="">
         </div>
-        <div class="race-circuit-map">
-          <img ng-src="images/circuits/{{raceResult.Circuit.circuitName}}.png" alt="{{raceResult.Circuit.circuitName}}">
-        </div>
-      </div> 
+      </div>
+      <div class="race-circuit-map">
+        <img ng-src="images/circuits/{{raceResult.Circuit.circuitName}}.png" alt="{{raceResult.Circuit.circuitName}}">
+      </div>
       <div class="resultList">
         <div class="table-responsive">
           <table class="table table-striped">

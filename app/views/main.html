@@ -1,6 +1,7 @@
 <div class="jumbotron">
   <div class="upcoming">
     <h3>Next Race: <strong>Round {{nextRace.round}} - <img ng-src="images/flags/{{nextRace.Circuit.Location.country}}.png" alt=""> {{nextRace.raceName}}</strong></h3>
+    <p>{{nextRace.date|date:'EEEE, MMMM d, y'}} - {{nextRace.time|date:'shortTime' : 'UTC'}}</p>
     <div class="countdown">
       <timer end-time="countdown">
         <div class="cnt-time-unit">{{days}}<span>Days</span></div> 
@@ -11,6 +12,7 @@
     </div>
     <div class="race-circuit-map">
       <img ng-src="images/circuits/{{nextRace.Circuit.circuitId}}.png" alt="{{nextRace.Circuit.circuitName}}">
+      <h4>{{nextRace.Circuit.circuitName}}, {{nextRace.Circuit.Location.locality}}, {{nextRace.Circuit.Location.country}}</h4>
     </div>
   </div>
 </div>
@@ -36,15 +38,15 @@
               <div class="race-circuit-flag"><img ng-src="images/flags/{{race.Circuit.Location.country}}.png" alt=""></div>
               <div class="race-circuit">
                 <h3 class="race-title">
-                  {{race.raceName}}
+                  {{race.raceName | limitTo: 30}}{{race.raceName.length > 30 ? "..." : ""}}
                 </h3>
                 <div class="race-circuit-name">
-                  {{race.Circuit.circuitName}}, {{race.Circuit.Location.locality}}, {{race.Circuit.Location.country}}
+                  {{race.Circuit.circuitName + ', ' + race.Circuit.Location.locality + ', ' + race.Circuit.Location.country | limitTo: 45}}{{(race.Circuit.circuitName.length + race.Circuit.Location.locality.length + race.Circuit.Location.country.length) > 45 ? "..." : ""}}
                 </div>              
               </div>
               <div class="race-winner">
-                <div class="p1-driver">
-                  <!-- Winning driver helmet goes here -->
+                <div class="p1-driver-sm">
+                  <img ng-src="images/helmets/{{race.Results[0].Driver.driverId}}.png" alt="">
                 </div>
                 <div class="p1-constructor-sm">
                   <img ng-src="images/cars/{{race.Results[0].Constructor.constructorId}}.png" alt="">

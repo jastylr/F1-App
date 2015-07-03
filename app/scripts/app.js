@@ -32,6 +32,9 @@ var app = angular
         templateUrl: 'views/driverDetail.html',
         controller: 'DriverController'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

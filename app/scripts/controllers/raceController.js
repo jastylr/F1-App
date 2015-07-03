@@ -23,7 +23,9 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
     ergastAPIservice.getNextRace().success(function (response) {
         var raceDate = response.MRData.RaceTable.Races[0].date;
         var raceTime = response.MRData.RaceTable.Races[0].time;
-        $scope.countdown = moment.utc(raceDate + ' ' + raceTime);  
+        //$scope.countdown = moment.utc(raceDate + ' ' + raceTime);
+        $scope.countdown = moment.utc(raceDate + ' ' + raceTime);
+        
         $scope.nextRace = response.MRData.RaceTable.Races[0];
         console.log($scope.nextRace);
 

@@ -76,7 +76,9 @@ img {
 
 
 /* F1 App Styles */
-.container .jumbotron, .container-fluid .jumbotron {
+.container .jumbotron, 
+.container-fluid .jumbotron,
+.content {
   background-color: rgba(0, 0, 0, 0.7);
   padding-left: 30px;
   padding-right: 30px;
@@ -85,6 +87,11 @@ img {
 .jumbotron {
   padding-bottom: 28px;
   padding-top: 28px;
+}
+
+.content {
+  color: #fff;
+  padding: 40px;
 }
 
 .upcoming {
@@ -169,16 +176,24 @@ h3.race-title {
 
 .race-winner {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 .p1-driver {
+  width:65px;
+}
 
+.p1-driver-sm {
+  width:35px;
 }
 
 .p1-constructor-sm,
 .constructor-sm {
   width: 100px;
+}
+
+.p1-constructor {
+  width: 350px;
 }
 
 .race-circuit-map {
