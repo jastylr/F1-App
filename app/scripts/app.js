@@ -24,7 +24,7 @@ var app = angular
         templateUrl: 'views/main.html',
         controller: 'RaceController'
       })
-      .when('/race/2015/:round', {
+      .when('/race/:season/:round', {
         templateUrl: 'views/raceDetail.html',
         controller: 'SingleRaceController'
       })

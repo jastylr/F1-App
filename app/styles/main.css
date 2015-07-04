@@ -6,10 +6,7 @@
 }
 
 body {
-  background: #fff url(../images/f1-background.jpg);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: 100%;
+  background: #fff;
   font-family: "Open Sans", Arial, helvetica, sans-serif;
   padding: 0;
 }
@@ -17,6 +14,17 @@ body {
 img {
   max-width: 100%;
   height: auto !important;
+}
+
+.navbar-brand {
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.red {
+  color: #ff0000;
+  font-weight: 300;
 }
 
 .logo {
@@ -66,6 +74,12 @@ img {
   padding: 14px 24px;
 }
 
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -76,12 +90,14 @@ img {
 
 
 /* F1 App Styles */
+
 .container .jumbotron, 
-.container-fluid .jumbotron,
+.container-fluid .jumbotron, 
 .content {
   background-color: rgba(0, 0, 0, 0.7);
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 15px;
+  text-align: center;
+  padding-right: 15px;
 }
 
 .jumbotron {
@@ -91,7 +107,9 @@ img {
 
 .content {
   color: #fff;
-  padding: 40px;
+  padding: 20px;
+  font-size: 1.3em;
+  text-align: left;
 }
 
 .upcoming {
@@ -99,10 +117,14 @@ img {
 }
 
 .upcoming h3 {
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin-top: 0;
-  text-align: left;
   text-transform: uppercase;
+}
+
+.upcoming h3 img {
+  width: 25px;
+  margin: 0 auto;
 }
 
 .cnt-time-unit {
@@ -120,6 +142,12 @@ img {
   font-weight: normal;
 }
 
+.filter-years,
+.filter-race-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .race-result,
 .driver-result {
   background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
@@ -131,7 +159,9 @@ img {
 
 .race-result a,
 .race-result a:hover {
+  display: block;
   color: #fff;
+  text-decoration: none;
 }
 
 .race-date-round, 
@@ -143,7 +173,7 @@ img {
 }
 
 .race-date-round {
-  max-width: 85px;
+  max-width: 95px;
 }
 
 .race-round {
@@ -158,15 +188,15 @@ img {
 }
 
 .race-circuit-flag {
-  width: 40px;
+  width: 35px;
   padding: 0;
-  margin: 0 20px 0 10px;
+  margin: 0 15px 0 15px;
 }
 
 h3.race-title {
   margin: 0;
   text-transform: uppercase;
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-weight: 700;
 }
 
@@ -183,7 +213,8 @@ h3.race-title {
   width:65px;
 }
 
-.p1-driver-sm {
+.p1-driver-sm,
+.driver-sm {
   width:35px;
 }
 
@@ -204,10 +235,14 @@ h3.race-title {
 .race-circuit-map-sm {
   display: inline-block;
   vertical-align: middle;
-  width: 100px;
+  width: 80px;
   position: absolute;
   right: 10px;
   top: 0;
+}
+
+.race-circuit-map h4 {
+  font-size: 14px;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
@@ -216,8 +251,51 @@ h3.race-title {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
+  body {
+    background: #fff url(../images/f1-background.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100%;
+  }
+
   .container {
     max-width: 760px;
+  }
+
+  .container .jumbotron, 
+  .container-fluid .jumbotron,
+  .content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .jumbotron p {
+    font-size: 21px;
+  }
+
+  .content {
+    font-size: 1em;
+    padding: 40px;
+  }
+
+  .upcoming h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    /*text-align: left;*/
+    text-transform: uppercase;
+  }
+
+  .upcoming h3 img {
+    width: 40px;
+    margin: 0;
+  }
+
+  .cnt-time-unit {
+    font-size: 3.4em;
+  }
+
+  .race-circuit-map h4 {
+    font-size: 18px;
   }
 
   /* Remove the padding we set earlier */

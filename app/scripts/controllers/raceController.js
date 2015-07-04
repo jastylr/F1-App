@@ -13,10 +13,19 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
 
     // Get race results for all completed races and display their
     // data on the main page.
-    ergastAPIservice.getRaceResults().success(function (response) {
-        $scope.raceResults = response.MRData.RaceTable.Races.reverse();
-        console.log($scope.raceResults);
-    });
+    // ergastAPIservice.getRaceResults().success(function (response) {
+    //     $scope.raceResults = response.MRData.RaceTable.Races.reverse();
+    //     console.log($scope.raceResults);
+    // });
+
+    // Get race results by year
+    $scope.results = function(year) {
+      $scope.raceseason = year;
+      ergastAPIservice.getRaceResults(year).success(function (response) {
+          $scope.raceResults = response.MRData.RaceTable.Races.reverse();
+          console.log($scope.raceResults);
+      });
+    };
 
     // Retrive information about the next upcoming race and use it
     // to display a countdown timer on the main page
@@ -28,7 +37,6 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
         
         $scope.nextRace = response.MRData.RaceTable.Races[0];
         console.log($scope.nextRace);
-
     });
 
     // Clear the race filter
@@ -38,11 +46,12 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
 });
 
 app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIservice) {
+  $scope.season = $routeParams.season;
   $scope.round = $routeParams.round;
   $scope.pageClass = 'page-race-result';
 
   // Get results for a particular race.
-  ergastAPIservice.getRaceResult($scope.round).success(function (response) {
+  ergastAPIservice.getRaceResult($scope.season, $scope.round).success(function (response) {
       $scope.raceResult = response.MRData.RaceTable.Races[0];
       console.log($scope.raceResult);
   });

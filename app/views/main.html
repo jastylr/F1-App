@@ -1,13 +1,13 @@
 <div class="jumbotron">
   <div class="upcoming">
-    <h3>Next Race: <strong>Round {{nextRace.round}} - <img ng-src="images/flags/{{nextRace.Circuit.Location.country}}.png" alt=""> {{nextRace.raceName}}</strong></h3>
+    <h3>Next Race: <strong>Round {{nextRace.round}}<br> <img ng-src="images/flags/{{nextRace.Circuit.Location.country}}.png" alt=""> {{nextRace.season}} {{nextRace.raceName}}</strong></h3>
     <p>{{nextRace.date|date:'EEEE, MMMM d, y'}} - {{nextRace.time|date:'shortTime' : 'UTC'}}</p>
     <div class="countdown">
       <timer end-time="countdown">
-        <div class="cnt-time-unit">{{days}}<span>Days</span></div> 
-        <div class="cnt-time-unit">{{hours}}<span>Hours</span></div>
-        <div class="cnt-time-unit">{{minutes}}<span>Minutes</span></div> 
-        <div class="cnt-time-unit">{{seconds}}<span>Seconds</span></div>
+        <div class="cnt-time-unit">{{days}}<span>{{days <= 1 ? 'Day' : 'Days'}}</span></div> 
+        <div class="cnt-time-unit">{{hours}}<span>{{hours <= 1 ? 'Hour' : 'Hours'}}</span></div>
+        <div class="cnt-time-unit">{{minutes}}<span>{{minutes <= 1 ? 'Minute' : 'Minutes'}}</span></div> 
+        <div class="cnt-time-unit">{{seconds}}<span>{{seconds <= 1 ? 'Second' : 'Seconds'}}</span></div>
       </timer>
     </div>
     <div class="race-circuit-map">
@@ -17,19 +17,26 @@
   </div>
 </div>
 
-<div class="row">
+<!-- Race results filterable by year -->
+<div class="row race-filter-block">
   <div class="col-md-12">
-    <h4>Search Races</h4>
-    <input type="text" ng-model="raceFilter" placeholder="Search..."/>
-    <button type="button" class="btn btn-info" ng-click="clearFilter()">Clear</button>
+    <h4>Filter Races</h4>
+    <div class="filter-years btn-group" role="group" aria-label="...">
+      <button ng-click="results('2015')" type="button" class="btn btn-default" ng-class="{'btn-primary' : raceseason == '2015'}">2015</button>
+      <button ng-click="results('2014')" type="button" class="btn btn-default" ng-class="{'btn-primary' : raceseason == '2014'}">2014</button>
+      <button ng-click="results('2013')" type="button" class="btn btn-default" ng-class="{'btn-primary' : raceseason == '2013'}">2013</button>
+    </div>
+    <div class="filter-race-title"><input type="text" ng-model="raceFilter" placeholder="Search..."/>
+        <button type="button" class="btn btn-info" ng-click="clearFilter()">Clear</button></div>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12" ng-init="results('2015')">
+    <h2>{{raceseason}} Race Results</h2>
     <ul class="list-unstyled">
       <li ng-repeat="race in raceResults | filter: searchFilter">
         <div class="race-result">
-          <a ng-href="#/race/2015/{{race.round}}">
+          <a ng-href="#/race/{{race.season}}/{{race.round}}">
             <div class="race-date-round">
               <div class="race-round">Round {{race.round}}</div> 
               <div class="race-date">{{race.date|date:'mediumDate'}}</div>
@@ -53,7 +60,7 @@
                 </div>
               </div>
               <div class="race-circuit-map-sm">
-                <img ng-src="images/circuits/{{race.Circuit.circuitName}}.png" alt="{{race.Circuit.circuitName}}">
+                <img ng-src="images/circuits/{{race.Circuit.circuitId}}.png" alt="{{race.Circuit.circuitName}}">
               </div>
             </div> 
           </a>

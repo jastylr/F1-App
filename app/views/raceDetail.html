@@ -23,8 +23,10 @@
         </div>
       </div>
       <div class="race-circuit-map">
-        <img ng-src="images/circuits/{{raceResult.Circuit.circuitName}}.png" alt="{{raceResult.Circuit.circuitName}}">
+        <img ng-src="images/circuits/{{raceResult.Circuit.circuitId}}.png" alt="{{raceResult.Circuit.circuitName}}">
       </div>
+
+      <!-- Race results -->
       <div class="resultList">
         <div class="table-responsive">
           <table class="table table-striped">
@@ -33,16 +35,20 @@
                 <th>Pos.</th>
                 <th>Driver</th>
                 <th>Team</th>
-                <th>Started</th>
+                <th>Grid</th>
                 <th>Laps</th>
                 <th>Time</th>
                 <th>Status</th>
+                <th>Points</th>
               </tr>
             </thead>
             <tr ng-repeat="result in raceResult.Results">
               <td>{{result.position}}</td>
               <td>
-                <a ng-href="#/driver/{{result.Driver.driverId}}">{{result.Driver.givenName}} {{result.Driver.familyName}}</a>
+                <a ng-href="#/driver/{{result.Driver.driverId}}">
+                  <img class="driver-sm" ng-src="images/helmets/{{result.Driver.driverId}}.png" alt="">&nbsp;&nbsp;
+                  {{result.Driver.givenName}} {{result.Driver.familyName}}
+                </a>
               </td>
               <td>
                 <a ng-href="{{result.Constructor.url}}"><img class="constructor-sm" ng-src="images/cars/{{result.Constructor.constructorId}}.png" alt="{{result.Constructor.name}}" title="{{result.Constructor.name}}"></a>
@@ -51,6 +57,7 @@
               <td>{{result.laps}}</td>
               <td>{{result.Time.time}}</td>
               <td>{{result.status}}</td>
+              <td>{{result.points}}</td>
             </tr>
           </table>
         </div>
