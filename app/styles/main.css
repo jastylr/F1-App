@@ -261,6 +261,20 @@ h3.race-title {
   font-size: 14px;
 }
 
+#areaMap, #addressMap
+{
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.driver-bio-img {
+  max-width: 400px;
+  float: none;
+  margin: 0 0 20px 0;
+}
+
 .race-photos li {
   max-width: 33.33%;
   display: inline-block;
@@ -320,6 +334,12 @@ h3.race-title {
     font-size: 18px;
   }
 
+  #areaMap, #addressMap
+  {
+    height: 400px;
+    width: 400px;
+  }
+
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -338,6 +358,12 @@ h3.race-title {
 
   .race-result {
     text-align: left;
+  }
+
+  .driver-bio-img {
+    max-width: 300px;
+    float: left;
+    margin: 0 20px 10px 0;
   }
 }
 
