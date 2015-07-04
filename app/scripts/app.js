@@ -17,8 +17,7 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'timer'
-  ])
-  .config(function ($routeProvider) {
+  ]).config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

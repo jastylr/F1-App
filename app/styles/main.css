@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #fff;
+  background: #eee;
   font-family: "Open Sans", Arial, helvetica, sans-serif;
   padding: 0;
 }
@@ -106,6 +106,7 @@ img {
 }
 
 .content {
+  background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 20px;
   font-size: 1.3em;
@@ -162,6 +163,13 @@ img {
   display: block;
   color: #fff;
   text-decoration: none;
+}
+
+.race-result:hover {
+  background-color: #000;
+  -webkit-box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 20px rgba(82,168,236,.7);
+  -moz-box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 20px rgba(82,168,236,.7);
+  box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 20px rgba(82,168,236,.7);
 }
 
 .race-date-round, 
@@ -245,6 +253,12 @@ h3.race-title {
   font-size: 14px;
 }
 
+.race-photos li {
+  max-width: 33.33%;
+  display: inline-block;
+  vertical-align: top;
+}
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: #666;
 }
@@ -252,7 +266,7 @@ h3.race-title {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   body {
-    background: #fff url(../images/f1-background.jpg);
+    background: #eee url(../images/f1-background.jpg);
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 100%;
@@ -323,6 +337,7 @@ h3.race-title {
 */
 .page-race-result.ng-enter         { animation: slideInRight 1.0s both ease-in; z-index: 8888; }
 .page-race-result.ng-leave         { animation: slideOutLeft 0.3s both ease-in; z-index: 9999; }
+
 
 /* ANIMATIONS
 ============================================================================= */

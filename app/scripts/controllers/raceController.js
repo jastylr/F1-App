@@ -45,7 +45,9 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
     };
 });
 
-app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIservice) {
+
+// SingleRaceController - used to retrieve data for a single, specific race
+app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIservice, Flickr) {
   $scope.season = $routeParams.season;
   $scope.round = $routeParams.round;
   $scope.pageClass = 'page-race-result';
@@ -53,6 +55,15 @@ app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIs
   // Get results for a particular race.
   ergastAPIservice.getRaceResult($scope.season, $scope.round).success(function (response) {
       $scope.raceResult = response.MRData.RaceTable.Races[0];
+      $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + $scope.raceResult.Results[0].Driver.familyName + ' ' + $scope.raceResult.season + ' ' + $scope.raceResult.raceName);
       console.log($scope.raceResult);
   });
+
+  $scope.getRacePhotos = function(race) {
+    console.log(race);
+      Flickr.getFlickrPhoto(race).then(function(data) {
+          $scope.photos = data.data.photos.photo;
+          console.log($scope.photos);
+      });
+  };
 });
