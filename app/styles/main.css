@@ -158,6 +158,14 @@ img {
   position: relative;
 }
 
+.race-result {
+  text-align: center;
+}
+
+.race-result table {
+  text-align: left;
+}
+
 .race-result a,
 .race-result a:hover {
   display: block;
@@ -165,7 +173,7 @@ img {
   text-decoration: none;
 }
 
-.race-result:hover {
+.page-main .race-result:hover {
   background-color: #000;
   -webkit-box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 20px rgba(82,168,236,.7);
   -moz-box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 20px rgba(82,168,236,.7);
@@ -232,7 +240,7 @@ h3.race-title {
 }
 
 .p1-constructor {
-  width: 350px;
+  max-width: 350px;
 }
 
 .race-circuit-map {
@@ -326,6 +334,10 @@ h3.race-title {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .race-result {
+    text-align: left;
   }
 }
 
