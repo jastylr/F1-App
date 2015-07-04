@@ -4,10 +4,10 @@
     <p>{{nextRace.date|date:'EEEE, MMMM d, y'}} - {{nextRace.time|date:'shortTime' : 'UTC'}}</p>
     <div class="countdown">
       <timer end-time="countdown">
-        <div class="cnt-time-unit">{{days}}<span>{{days <= 1 ? 'Day' : 'Days'}}</span></div> 
-        <div class="cnt-time-unit">{{hours}}<span>{{hours <= 1 ? 'Hour' : 'Hours'}}</span></div>
-        <div class="cnt-time-unit">{{minutes}}<span>{{minutes <= 1 ? 'Minute' : 'Minutes'}}</span></div> 
-        <div class="cnt-time-unit">{{seconds}}<span>{{seconds <= 1 ? 'Second' : 'Seconds'}}</span></div>
+        <div class="cnt-time-unit">{{days}}<span>{{days == 1 ? 'Day' : 'Days'}}</span></div> 
+        <div class="cnt-time-unit">{{hours}}<span>{{hours == 1 ? 'Hour' : 'Hours'}}</span></div>
+        <div class="cnt-time-unit">{{minutes}}<span>{{minutes == 1 ? 'Minute' : 'Minutes'}}</span></div> 
+        <div class="cnt-time-unit">{{seconds}}<span>{{seconds == 1 ? 'Second' : 'Seconds'}}</span></div>
       </timer>
     </div>
     <div class="race-circuit-map">
