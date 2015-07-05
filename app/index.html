@@ -41,7 +41,9 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li ng-class="{ active: isActive('/') }"><a href="#/">Races</a></li>
+              <li ng-class="{ active: isActive('/') }"><a href="#/">Race Results</a></li>
+              <li ng-class="{ active: isActive('/drivers') }"><a href="#/drivers">Drivers</a></li>
+              <li ng-class="{ active: isActive('/circuits') }"><a href="#/circuits">Circuits</a></li>
               <li ng-class="{ active: isActive('/about') }"><a ng-href="#/about">About</a></li>
             </ul>
           </div>
@@ -99,6 +101,7 @@
     <script src="scripts/controllers/navController.js"></script>
     <script src="scripts/controllers/raceController.js"></script>
     <script src="scripts/controllers/driverController.js"></script>
+    <script src="scripts/controllers/circuitController.js"></script>
     <script src="scripts/services/ergastService.js"></script>
     <script src="scripts/services/wikiService.js"></script>
     <script src="scripts/services/flickrService.js"></script>

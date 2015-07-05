@@ -1,8 +1,15 @@
 'use strict';
 
+app.controller('DriversController', function($scope, $http, ergastAPIservice) {
+    $scope.drivers = [];
+
+    ergastAPIservice.getDrivers().success(function (response) {
+        $scope.drivers = response.MRData.DriverTable.Drivers;
+    });
+});
+
 app.controller('DriverController', function($scope, $http, $routeParams, ergastAPIservice, wikiService, Flickr) {
     $scope.nameFilter = null;
-    $scope.driversList = [];
     $scope.id = $routeParams.id;
     var driverName = '';
 

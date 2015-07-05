@@ -27,9 +27,21 @@ var app = angular
         templateUrl: 'views/raceDetail.html',
         controller: 'SingleRaceController'
       })
+      .when('/drivers', {
+        templateUrl: 'views/driverList.html',
+        controller: 'DriversController'
+      })
       .when('/driver/:id', {
         templateUrl: 'views/driverDetail.html',
         controller: 'DriverController'
+      })
+      .when('/circuits', {
+        templateUrl: 'views/circuitList.html',
+        controller: 'CircuitsController'
+      })
+      .when('/circuits/:id', {
+        templateUrl: 'views/circuitDetail.html',
+        controller: 'CircuitController'
       })
       .when('/about', {
         templateUrl: 'views/about.html'

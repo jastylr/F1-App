@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-12 content clearfix">
+  	<h1>Current Circuits</h1>
+		<div class="col-md-4 col-sm-6 circuit" ng-repeat="circuit in circuits">
+			<a ng-href="#/circuits/{{circuit.circuitId}}">
+				<div class="circuit-map">
+					<img ng-src="images/circuits/{{circuit.circuitId}}.png" alt="{{circuit.circuitName}}">				
+				</div>
+				<div class="circuit-title">
+					<h4>{{circuit.circuitName}}</h4>
+					<span>{{circuit.Location.locality}}, {{circuit.Location.country}}</span>
+				</div>
+			</a>
+		</div>
+  </div>
+</div>

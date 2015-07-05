@@ -261,6 +261,29 @@ h3.race-title {
   font-size: 14px;
 }
 
+.circuit-map {
+  text-align: center;
+}
+
+.circuit-title {
+  height: 6em;
+  overflow: hidden;
+  text-align: center;
+}
+
+.circuit-title h4 {
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  height: 2em;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.circuit-title span {
+  color: #fff;
+}
+
 #areaMap, #addressMap
 {
   height: 300px;
@@ -417,3 +440,5 @@ h3.race-title {
     from    { transform:translateY(100%); }
     to      { transform: translateY(0); }
 }
+
+
