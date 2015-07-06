@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <div class="upcoming">
+  <div ng-init="getNextRace()" class="upcoming">
     <h3>Next Race: <strong>Round {{nextRace.round}}<br> <img ng-src="images/flags/{{nextRace.Circuit.Location.country}}.png" alt=""> {{nextRace.season}} {{nextRace.raceName}}</strong></h3>
     <p>{{nextRace.date|date:'EEEE, MMMM d, y'}} - {{nextRace.time|date:'shortTime' : 'UTC'}}</p>
     <div class="countdown">
@@ -34,36 +34,37 @@
   <div class="col-md-12" ng-init="getRaceResults('2015')">
     <h2>{{raceseason}} Race Results</h2>
     <ul class="list-unstyled">
-      <li ng-repeat="race in raceResults | filter: searchFilter">
+      <li ng-repeat="race in raceResults | filter: searchFilter" ng-mouseenter="hover(race)" ng-mouseleave="hover(race)">
         <div class="race-result">
           <a ng-href="#/race/{{race.season}}/{{race.round}}">
-            <div class="race-date-round">
-              <div class="race-round">Round {{race.round}}</div> 
-              <div class="race-date">{{race.date|date:'mediumDate'}}</div>
-            </div>
-            <div class="race-header">
-              <div class="race-circuit-flag"><img ng-src="images/flags/{{race.Circuit.Location.country}}.png" alt=""></div>
-              <div class="race-circuit">
-                <h3 class="race-title">
-                  {{race.raceName | limitTo: 30}}{{race.raceName.length > 30 ? "..." : ""}}
-                </h3>
-                <div class="race-circuit-name">
-                  {{race.Circuit.circuitName + ', ' + race.Circuit.Location.locality + ', ' + race.Circuit.Location.country | limitTo: 45}}{{(race.Circuit.circuitName.length + race.Circuit.Location.locality.length + race.Circuit.Location.country.length) > 45 ? "..." : ""}}
-                </div>              
-              </div>
-              <div class="race-winner">
-                <div class="p1-driver-sm">
-                  <img ng-src="images/helmets/{{race.Results[0].Driver.driverId}}.png" alt="">
-                </div>
-                <div class="p1-constructor-sm">
-                  <img ng-src="images/cars/{{race.Results[0].Constructor.constructorId}}.png" alt="">
-                </div>
-              </div>
-              <div class="race-circuit-map-sm">
-                <img ng-src="images/circuits/{{race.Circuit.circuitId}}.png" alt="{{race.Circuit.circuitName}}">
-              </div>
-            </div> 
+            <div class="hover-msg" ng-show="hovering"><p>{{hoverMsg}}</p></div>
           </a>
+          <div class="race-date-round">
+            <div class="race-round">Round {{race.round}}</div> 
+            <div class="race-date">{{race.date|date:'mediumDate'}}</div>
+          </div>
+          <div class="race-header">
+            <div class="race-circuit-flag"><img ng-src="images/flags/{{race.Circuit.Location.country}}.png" alt=""></div>
+            <div class="race-circuit">
+              <h3 class="race-title">
+                {{race.raceName | limitTo: 30}}{{race.raceName.length > 30 ? "..." : ""}}
+              </h3>
+              <div class="race-circuit-name">
+                {{race.Circuit.circuitName + ', ' + race.Circuit.Location.locality + ', ' + race.Circuit.Location.country | limitTo: 45}}{{(race.Circuit.circuitName.length + race.Circuit.Location.locality.length + race.Circuit.Location.country.length) > 45 ? "..." : ""}}
+              </div>              
+            </div>
+            <div class="race-winner">
+              <div class="p1-driver-sm">
+                <img ng-src="images/helmets/{{race.Results[0].Driver.driverId}}.png" alt="">
+              </div>
+              <div class="p1-constructor-sm">
+                <img ng-src="images/cars/{{race.Results[0].Constructor.constructorId}}.png" alt="">
+              </div>
+            </div>
+            <div class="race-circuit-map-sm">
+              <img ng-src="images/circuits/{{race.Circuit.circuitId}}.png" alt="{{race.Circuit.circuitName}}">
+            </div>
+          </div> 
         </div>
       </li>
     </ul>

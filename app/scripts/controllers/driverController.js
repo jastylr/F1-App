@@ -8,7 +8,7 @@ app.controller('DriversController', function($scope, $http, ergastAPIservice) {
     });
 });
 
-app.controller('DriverController', function($scope, $http, $routeParams, ergastAPIservice, wikiService, Flickr) {
+app.controller('DriverController', function($scope, $http, $routeParams, $filter, ergastAPIservice, wikiService, Flickr) {
     $scope.nameFilter = null;
     $scope.id = $routeParams.id;
     var driverName = '';
@@ -23,9 +23,9 @@ app.controller('DriverController', function($scope, $http, $routeParams, ergastA
     // Make a call to the Wiki API to retrive driver bio information
     $scope.driverBio = function(driver) {
         wikiService.get(driver).then(function(data) {
-            console.log(data);
             var pageId = data.data.query.pageids[0];
             $scope.wikiData = data.data.query.pages[pageId].extract;
+            $scope.wikiUrl = data.data.query.pages[pageId].canonicalurl;
         });
     };
 

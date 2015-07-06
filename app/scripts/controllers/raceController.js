@@ -13,32 +13,44 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
 
     // Get race results by year
     $scope.getRaceResults = function(year) {
+      
       $scope.raceseason = year;
+
       ergastAPIservice.getRaceResults(year).success(function (response) {
           $scope.raceResults = response.MRData.RaceTable.Races.reverse();
-          console.log($scope.raceResults);
       });
     };
 
-    // Retrive information about the next upcoming race and use it
-    // to display a countdown timer on the main page
-    ergastAPIservice.getNextRace().success(function (response) {
-        
-        // Get the date and time of the next race returned from the ergast API
-        var raceDate = response.MRData.RaceTable.Races[0].date;
-        var raceTime = response.MRData.RaceTable.Races[0].time;
-        
-        // Create a timestamp from the race date and time that will be
-        // used to provide a countdown time until the race starts
-        $scope.countdown = moment.utc(raceDate + ' ' + raceTime);
-        
-        // Save the data for the next race so that we can display it
-        $scope.nextRace = response.MRData.RaceTable.Races[0];
-    });
+    $scope.getNextRace = function() {
+      // Retrive information about the next upcoming race and use it
+      // to display a countdown timer on the main page
+      ergastAPIservice.getNextRace().success(function (response) {
+          
+          // Get the date and time of the next race returned from the ergast API
+          var raceDate = response.MRData.RaceTable.Races[0].date;
+          var raceTime = response.MRData.RaceTable.Races[0].time;
+          
+          // Create a timestamp from the race date and time that will be
+          // used to provide a countdown time until the race starts
+          $scope.countdown = moment.utc(raceDate + ' ' + raceTime);
+          
+          // Save the data for the next race so that we can display it
+          $scope.nextRace = response.MRData.RaceTable.Races[0];
+      });
+    };
 
-    // Clear the race filter
+    // Clear the race search filter
     $scope.clearFilter = function() {
       $scope.raceFilter = '';
+    };
+
+    // Detect when a user hovers over one of the race results and
+    // display a message
+    $scope.hover = function(race) {
+      $scope.hoverMsg = 'View results for ' + race.season + ' ' + race.raceName;
+      // Only affect the currently hovered item by using this instead of scope
+      // which ng-show will use to determine whether to display the message
+      this.hovering = !this.hovering;
     };
 });
 
@@ -49,6 +61,7 @@ app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIs
   // Setupa a couple of parameters coming from the route
   $scope.season = $routeParams.season;
   $scope.round = $routeParams.round;
+  $scope.photos = [];
 
   $scope.pageClass = 'page-race-result';
 
@@ -57,14 +70,6 @@ app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIs
       // Save the race data in $scope.raceResult
       $scope.raceResult = response.MRData.RaceTable.Races[0];
       
-      // Setup a scope object to store the location of the race circuit to be displayed
-      // by a custom Google Maps directive
-      // $scope.Area = {
-      //   Name: $scope.raceResult.Circuit.Location.locality,
-      //   Latitude: $scope.raceResult.Circuit.Location.lat,
-      //   Longitude: $scope.raceResult.Circuit.Location.long
-      // };
-
       // Call the getRacePhotos method which takes a search string paramter which I set to
       // the winning driver's name, the season and the name of the race and returns any matching
       // photos from the Flickr service

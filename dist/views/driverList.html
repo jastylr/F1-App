@@ -1,1 +1,1 @@
-<div class="row"> <div class="col-md-12 content"> <h1>Current Formula One Drivers</h1> <ul class="drivers-list"> <li ng-repeat="driver in drivers"> <a ng-href="#/driver/{{driver.driverId}}">{{driver.givenName}} {{driver.familyName}}</a> </li> </ul> </div> </div>
+<div class="row"> <div class="col-md-12"> <div class="content clearfix"> <h1>Current F1 Drivers</h1> <div class="col-md-4 col-sm-6 circuit" ng-repeat="driver in drivers"> <a ng-href="#/driver/{{driver.driverId}}">{{driver.givenName}} {{driver.familyName}}</a> </div> </div> </div> </div>
