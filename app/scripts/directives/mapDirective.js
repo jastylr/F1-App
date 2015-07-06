@@ -4,7 +4,8 @@ app.directive('addressBasedGoogleMap', function () {
         template: "<div id='addressMap'></div>",
         scope: {
             address: "=",
-            zoom: "="
+            zoom: "=",
+            type: "="
         },
         controller: function ($scope) {
             var geocoder;
@@ -14,10 +15,11 @@ app.directive('addressBasedGoogleMap', function () {
             var initialize = function () {
                 geocoder = new google.maps.Geocoder();
                 latlng = new google.maps.LatLng(-34.397, 150.644);
+                var mapType = (type.toUpperCase() === 'SATELLITE' ? google.maps.MapTypeId.SATELLITE : google.maps.MapTypeId.TERRAIN);
                 var mapOptions = {
                     zoom: $scope.zoom,
                     center: latlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: mapType
                 };
                 map = new google.maps.Map(document.getElementById('addressMap'), mapOptions);
             };
@@ -48,18 +50,19 @@ app.directive('areaBasedGoogleMap', function () {
         template: "<div id='areaMap'></div>",
         scope: {           
             area: "=",
-            zoom: "="
+            zoom: "=",
+            mapview: "@"
         },
         controller: function ($scope) {
             var mapOptions;
             var map;           
             var marker;
-
-            var initialize = function () {                                
+             
+            var initialize = function () { 
                 mapOptions = {
                     zoom: $scope.zoom,
                     center: new google.maps.LatLng(40.0000, -98.0000),
-                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                    mapTypeId: ($scope.mapview == 'satellite') ? google.maps.MapTypeId.SATELLITE : google.maps.MapTypeId.TERRAIN
                 };
                 map = new google.maps.Map(document.getElementById('areaMap'), mapOptions);
             };

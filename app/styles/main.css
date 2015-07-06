@@ -346,6 +346,15 @@ h3.race-title {
   margin-bottom: 20px;
 }
 
+.driver {
+  text-align: center;
+}
+
+.driver a {
+  color: #fff;
+  font-size: 1.2em;
+}
+
 .driver-bio-img {
   max-width: 400px;
   float: none;

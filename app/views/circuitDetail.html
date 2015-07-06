@@ -5,7 +5,7 @@
 	  	<div class="circuit-map">
 	  		<img ng-src="images/circuits/{{circuit.circuitId}}.png" alt="{{circuit.circuitName}}">
 	  	</div>
-	  	<div area-based-google-map area="Area" zoom="15"></div>
+	  	<div area-based-google-map area="Area" mapview="satellite" zoom="15"></div>
 			<div ng-bind-html="circuitInfo"></div>
 			<a class="btn btn-primary read-more" ng-href="{{wikiUrl}}" role="button" target="_blank">Read more at WikiPedia</a>
 	  </div>
