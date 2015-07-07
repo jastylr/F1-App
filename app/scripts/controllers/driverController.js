@@ -4,7 +4,9 @@ app.controller('DriversController', function($scope, $http, ergastAPIservice) {
     $scope.drivers = [];
 
     ergastAPIservice.getDrivers().success(function (response) {
-        $scope.drivers = response.MRData.DriverTable.Drivers;
+        //$scope.drivers = response.MRData.DriverTable.Drivers;
+        $scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+        console.log($scope.drivers);
     });
 });
 
@@ -14,7 +16,9 @@ app.controller('DriverController', function($scope, $http, $routeParams, $filter
     var driverName = '';
 
     ergastAPIservice.getDriver($scope.id).success(function (response) {
-        $scope.driver = response.MRData.DriverTable.Drivers[0];
+        //$scope.driver = response.MRData.DriverTable.Drivers[0];
+        $scope.driver = response.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver;
+
         driverName = $scope.driver.givenName + '_' + $scope.driver.familyName;
         $scope.driverBio(driverName);
         $scope.getDriverPhoto(driverName);

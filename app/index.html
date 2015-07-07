@@ -18,6 +18,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="F1App">
+    
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -51,6 +52,9 @@
       </div>
     </div>
 
+    <div ng-controller="VideoBkgController" class="video-bg" style="width:100%; height: 500px; position:fixed !important; background-size: contain; z-index:-1; margin-top:140px;">
+      <video-bg video-id="videoId" player-callback="callback(player)"></video-bg>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-12 logo"><a href="#/"><img ng-src="images/gp-pro-logo.png" alt=""></a></div>
@@ -96,6 +100,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/angular-video-bg/angular-video-bg.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -106,6 +111,7 @@
     <script src="scripts/controllers/raceController.js"></script>
     <script src="scripts/controllers/driverController.js"></script>
     <script src="scripts/controllers/circuitController.js"></script>
+    <script src="scripts/controllers/videoBkgController.js"></script>
     <script src="scripts/services/ergastService.js"></script>
     <script src="scripts/services/wikiService.js"></script>
     <script src="scripts/services/flickrService.js"></script>

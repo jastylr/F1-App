@@ -32,14 +32,23 @@ app.factory('ergastAPIservice', function($http) {
     ergastAPI.getDrivers = function() {
       return $http({
         method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/current/drivers.json?callback=JSON_CALLBACK'
+        //url: 'http://ergast.com/api/f1/current/drivers.json?callback=JSON_CALLBACK'
+        url: 'http://ergast.com/api/f1/current/driverStandings.json?callback=JSON_CALLBACK'
       });
     };
 
     ergastAPI.getDriver = function(id) {
       return $http({
         method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/drivers/' + id + '.json?callback=JSON_CALLBACK'
+        //url: 'http://ergast.com/api/f1/drivers/' + id + '.json?callback=JSON_CALLBACK'
+        url: 'http://ergast.com/api/f1/current/drivers/'+ id +'/driverStandings.json?callback=JSON_CALLBACK'
+      });
+    };
+
+    ergastAPI.getDriverStandings = function(id) {
+      return $http({
+        method: 'JSONP', 
+        url: 'http://ergast.com/api/f1/drivers/' + id + '/driverStandings.json?callback=JSON_CALLBACK'
       });
     };
 

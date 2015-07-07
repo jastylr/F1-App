@@ -31,7 +31,7 @@
       <div class="race-photos">
         <ul class="list-unstyled">
           <li ng-repeat="photo in photos" ng-if="$index < 3">
-            <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg" alt="{{ photo.title }}" />
+            <img ng-show="photo" ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg" alt="{{ photo.title }}" />
           </li>
         </ul>
       </div>

@@ -43,7 +43,8 @@ img {
 
 .logo {
   text-align: center;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -108,7 +109,7 @@ img {
 .container .jumbotron, 
 .container-fluid .jumbotron, 
 .content {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   padding-left: 15px;
   text-align: center;
   padding-right: 15px;
@@ -195,7 +196,7 @@ img {
 }
 
 .race-result .hover-msg {
-  background: rgba(0, 0, 0, 0.7) url(../images/arrow-icon.png) no-repeat 90% 50%;
+  background: rgba(0, 0, 0, 0.7) url(../images/arrow-icon.png) no-repeat 50% 50%;
   color: #fff;
   font-size: 1.6em;
   padding: 1em;
@@ -365,6 +366,29 @@ h3.race-title {
   margin: 0 0 20px 0;
 }
 
+.driver-title a {
+  display: block;
+  font-size: 1.1em !important;
+  margin: 10px 0;
+}
+
+.driver-stats .stat {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+}
+
+.driver-stats .stat small,
+.driver-stats .stat strong {
+  display: block;
+}
+
+.driver-constructor {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
 .race-photos li {
   max-width: 33.33%;
   display: inline-block;
@@ -382,6 +406,11 @@ h3.race-title {
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 100%;
+  }
+
+  .navbar {
+    margin-bottom: 0;
+    border: none;
   }
 
   .container {
@@ -465,7 +494,7 @@ h3.race-title {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
@@ -474,6 +503,10 @@ h3.race-title {
 
   .race-result {
     text-align: left;
+  }
+
+  .race-result .hover-msg {
+    background-position: 95% 50%;
   }
 
   .driver-bio-img {
