@@ -15,7 +15,7 @@ app.controller('VideoBkgController', function($scope) {
       		quality = 'default';
       	}
       	player.setPlaybackQuality(quality);
-      }
+      };
       $scope.setQuality('hd720');
   };
 });
