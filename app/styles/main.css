@@ -73,10 +73,10 @@ img {
 
 /* Custom page header */
 .header {
-  background: #eee url(../images/f1-background.jpg);
+  background: #eee url(../images/header-bkg.jpg);
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-size: 200%;
+  background-size: cover;
   border-bottom: 1px solid #e5e5e5;
   /*height: 220px;*/
   margin-bottom: 10px;
@@ -150,7 +150,7 @@ img {
 .content {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 10px 0;
+  padding: 10px;
   font-size: 1.3em;
   text-align: left;
 }
@@ -326,6 +326,7 @@ h3.race-title {
 
 .circuit {
   padding: 10px;
+  margin-bottom: 10px;
   background-color: rgba(0,0,0,0.5);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -435,7 +436,7 @@ h3.race-title {
 
   .navbar {
     margin-bottom: 0;
-    border: none;
+    border: 1px solid #eee;
   }
 
   .container {
