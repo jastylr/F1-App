@@ -58,8 +58,7 @@ img {
   position:fixed !important; 
   bottom: 0;
   background-size: cover;
-  margin-top:140px; 
-  z-index:-1;
+  margin-top:140px;
 }
 
 
@@ -97,7 +96,9 @@ img {
 /* Custom page footer */
 .footer {
   padding-top: 19px;
+  position: relative;
   color: #fff;
+  font-size: 11px;
   border-top: 1px solid #e5e5e5;
   background-color: rgba(0,0,0,0.7);
 }
@@ -110,6 +111,7 @@ img {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  position: relative;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -140,6 +142,7 @@ img {
   padding-left: 15px;
   text-align: center;
   padding-right: 15px;
+  position: relative;
 }
 
 .jumbotron {
@@ -441,6 +444,7 @@ h3.race-title {
 
   .container {
     max-width: 760px;
+    position: relative;
   }
 
   .container .jumbotron, 
