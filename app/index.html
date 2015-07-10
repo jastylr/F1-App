@@ -50,16 +50,18 @@
           </div>
         </div>
       </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 logo"><a href="#/"><img ng-src="images/gp-pro-logo.png" alt=""></a></div>
+        </div>
+      </div>
     </div>
-
     <div ng-controller="VideoBkgController" class="video-bg">
       <video-bg video-id="videoId" player-callback="callback(player)"></video-bg>
     </div>
+    
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 logo"><a href="#/"><img ng-src="images/gp-pro-logo.png" alt=""></a></div>
-      </div>
-      <div ng-view="" class="{{pageClass}}"></div>
+      <div ng-view="" class="page {{pageClass}}"></div>
     </div>
 
     <div class="footer">

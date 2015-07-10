@@ -6,7 +6,6 @@ app.controller('DriversController', function($scope, $http, ergastAPIservice) {
     ergastAPIservice.getDrivers().success(function (response) {
         //$scope.drivers = response.MRData.DriverTable.Drivers;
         $scope.drivers = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
-        console.log($scope.drivers);
     });
 });
 
@@ -34,9 +33,9 @@ app.controller('DriverController', function($scope, $http, $routeParams, $filter
     };
 
     $scope.getDriverPhoto = function(driverName) {
+
         Flickr.getFlickrPhoto(driverName).then(function(data) {
             $scope.photo = data.data.photos.photo[0];
-            console.log($scope.photo);
         });
     };
         

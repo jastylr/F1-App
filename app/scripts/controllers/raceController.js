@@ -56,7 +56,7 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
 
 
 // SingleRaceController - used to retrieve data for a single, specific race
-app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIservice, Flickr) {
+app.controller('SingleRaceController', function($scope, $filter, $routeParams, ergastAPIservice, Flickr) {
   
   // Setupa a couple of parameters coming from the route
   $scope.season = $routeParams.season;
@@ -64,6 +64,16 @@ app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIs
   $scope.photos = [];
 
   $scope.pageClass = 'page-race-result';
+
+//////// TEST 
+  // ergastAPIservice.getRaceResults('2015').success(function (response) {
+  //   $scope.raceResults = response.MRData.RaceTable.Races.reverse();
+  //   var result = $filter('filter')($scope.raceResults, { season: $scope.season, round: $scope.round });
+  //   $scope.raceResult = result[0];
+  //   $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + $scope.raceResult.Results[0].Driver.familyName + ' ' + $scope.raceResult.season + ' ' + $scope.raceResult.raceName)
+  //   console.log($scope.raceResult);
+  // });
+//////// END TEST
 
   // Get results for a particular race.
   ergastAPIservice.getRaceResult($scope.season, $scope.round).success(function (response) {
@@ -74,7 +84,6 @@ app.controller('SingleRaceController', function($scope, $routeParams, ergastAPIs
       // the winning driver's name, the season and the name of the race and returns any matching
       // photos from the Flickr service
       $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + $scope.raceResult.Results[0].Driver.familyName + ' ' + $scope.raceResult.season + ' ' + $scope.raceResult.raceName);
-      console.log($scope.raceResult);
   });
 
   // Call the Flickr API service to return a set of photos matching our search string

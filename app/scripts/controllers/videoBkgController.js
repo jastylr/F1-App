@@ -11,11 +11,11 @@ app.controller('VideoBkgController', function($scope) {
           player.playVideo();
       };
       $scope.setQuality = function(quality) {
-      	if (quality === undefined) {
-      		quality = 'default';
-      	}
+      	quality = quality === undefined ? 'default' : quality;
+      	
       	player.setPlaybackQuality(quality);
       };
-      $scope.setQuality('hd720');
+
+      $scope.setQuality();
   };
 });

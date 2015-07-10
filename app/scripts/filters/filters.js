@@ -9,3 +9,10 @@ app.filter('limitHtml', function() {
         return length > limit ? changedString.substr(0, limit - 1) : changedString; 
     };
 });
+
+app.filter('prettyJSON', function () {
+    function syntaxHighlight(json) {
+      return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';
+    }
+    return syntaxHighlight;
+});

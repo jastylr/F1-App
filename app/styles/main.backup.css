@@ -11,10 +11,6 @@ body {
   padding: 0;
 }
 
-.page {
-  margin-top: 200px;
-}
-
 h1 {
   font-size: 32px;
 }
@@ -47,7 +43,7 @@ img {
 
 .logo {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   margin-top: 10px;
 }
 
@@ -56,7 +52,6 @@ img {
   width:100%; 
   height: 560px; 
   position:fixed !important; 
-  bottom: 0;
   background-size: cover;
   margin-top:140px; 
   z-index:-1;
@@ -73,18 +68,8 @@ img {
 
 /* Custom page header */
 .header {
-  background: #eee url(../images/f1-background.jpg);
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: 200%;
   border-bottom: 1px solid #e5e5e5;
-  /*height: 220px;*/
   margin-bottom: 10px;
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
@@ -99,7 +84,6 @@ img {
   padding-top: 19px;
   color: #fff;
   border-top: 1px solid #e5e5e5;
-  background-color: rgba(0,0,0,0.7);
 }
 
 .container-narrow > hr {
@@ -425,11 +409,10 @@ h3.race-title {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .page {
-    margin-top: 220px;
-  }
-
-  .header {
+  body {
+    background: #eee url(../images/f1-background.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
     background-size: 100%;
   }
 
@@ -450,7 +433,7 @@ h3.race-title {
   }
 
   .logo {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
 
   .jumbotron p {
