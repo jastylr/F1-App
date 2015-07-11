@@ -17,6 +17,7 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'angularVideoBg',
+    'angularSpinners',
     'timer'
   ]).config(function ($routeProvider) {
     $routeProvider

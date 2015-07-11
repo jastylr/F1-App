@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('RaceController', function($scope, ergastAPIservice) {
+app.controller('RaceController', function($scope, ergastAPIservice, spinnerService) {
     $scope.raceFilter = '';
     $scope.nextRace = {};
     $scope.raceResults = [];
@@ -22,6 +22,7 @@ app.controller('RaceController', function($scope, ergastAPIservice) {
     };
 
     $scope.getNextRace = function() {
+      
       // Retrive information about the next upcoming race and use it
       // to display a countdown timer on the main page
       ergastAPIservice.getNextRace().success(function (response) {

@@ -1,6 +1,15 @@
 <div class="row">
   <div class="col-md-12">
     <div class="content">
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active">
+          <a href="#/drivers">
+            <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+              Back
+          </a>
+        </li>
+      </ul>
+      
       <h1>{{driver.givenName}} {{driver.familyName}}</h1>
       <div class="driver-bio-img">
         <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg" alt="{{ photo.title }}" />

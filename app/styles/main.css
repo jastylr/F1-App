@@ -24,6 +24,16 @@ img {
   height: auto !important;
 }
 
+input, button, select, textarea {
+  color: #666;
+}
+
+.route-loader {
+  color: #fff;
+  font-size: 1.3em;
+  z-index: 9999;
+}
+
 .navbar-brand {
   color: #000;
   font-style: italic;
