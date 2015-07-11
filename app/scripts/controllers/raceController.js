@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('RaceController', function($scope, ergastAPIservice, spinnerService) {
+app.controller('RaceController', function($scope, ergastAPIservice) {
     $scope.raceFilter = '';
     $scope.nextRace = {};
     $scope.raceResults = [];

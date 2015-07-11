@@ -5,7 +5,6 @@
     <title>GP Pro - Formula One Grand Prix Racing Results</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -24,7 +23,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header" ng-controller="NavController">
+    <div class="header" ng-controller="NavController" ng-class="navClass">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -52,7 +51,7 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-md-12 logo"><a href="#/"><img ng-src="images/gp-pro-logo.png" alt=""></a></div>
+          <div class="col-md-12 logo"><a href="#/"><img ng-class="logoClass" ng-src="images/gp-pro-logo.png" alt=""></a></div>
         </div>
       </div>
     </div>
@@ -104,7 +103,6 @@
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
     <script src="bower_components/angular-video-bg/angular-video-bg.min.js"></script>
-    <script src="bower_components/angular-spinners/dist/angular-spinners.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

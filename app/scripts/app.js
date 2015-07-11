@@ -17,7 +17,6 @@ var app = angular
     'ngSanitize',
     'ngTouch',
     'angularVideoBg',
-    'angularSpinners',
     'timer'
   ]).config(function ($routeProvider) {
     $routeProvider
@@ -33,7 +32,7 @@ var app = angular
         templateUrl: 'views/driverList.html',
         controller: 'DriversController'
       })
-      .when('/driver/:id', {
+      .when('/drivers/:id', {
         templateUrl: 'views/driverDetail.html',
         controller: 'DriverController'
       })

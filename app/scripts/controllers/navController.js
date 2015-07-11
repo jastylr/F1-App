@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('NavController', function($scope, $location) {
+app.controller('NavController', function($scope, $location, $window) {
   // Mobile menu is initally collapsed
   $scope.isCollapsed = true;
   
@@ -17,4 +17,17 @@ app.controller('NavController', function($scope, $location) {
     var active = (viewLocation === $location.path());
     return active;
   };
+
+  angular.element($window).bind(
+    "scroll", function() {
+       //console.log(window.pageYOffset);
+       if(window.pageYOffset > 85) {
+         $scope.navClass = 'header-sm';
+         $scope.logoClass = 'logo-sm';
+       } else {
+         $scope.navClass = 'header-lg';
+         $scope.logoClass = 'logo-lg';
+       }
+       $scope.$apply();
+   });
 });

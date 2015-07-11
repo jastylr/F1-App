@@ -55,7 +55,7 @@
             <tr ng-repeat="result in raceResult.Results">
               <td>{{result.position}}</td>
               <td>
-                <a ng-href="#/driver/{{result.Driver.driverId}}">
+                <a ng-href="#/drivers/{{result.Driver.driverId}}">
                   <img class="driver-sm" ng-src="images/helmets/{{result.Driver.driverId}}.png" alt="">&nbsp;&nbsp;
                   {{result.Driver.givenName}} {{result.Driver.familyName}}
                 </a>
