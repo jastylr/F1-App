@@ -1,18 +1,22 @@
 'use strict';
 
-app.filter('limitHtml', function() {
-    return function(text, limit) {
+(function() {
+	var app = angular.module('F1App');
 
-        var changedString = String(text).replace(/<[^>]+>/gm, '');
-        var length = changedString.length;
+	app.filter('limitHtml', function() {
+	    return function(text, limit) {
 
-        return length > limit ? changedString.substr(0, limit - 1) : changedString; 
-    };
-});
+	        var changedString = String(text).replace(/<[^>]+>/gm, '');
+	        var length = changedString.length;
 
-app.filter('prettyJSON', function () {
-    function syntaxHighlight(json) {
-      return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';
-    }
-    return syntaxHighlight;
-});
+	        return length > limit ? changedString.substr(0, limit - 1) : changedString; 
+	    };
+	});
+
+	app.filter('prettyJSON', function () {
+	    function syntaxHighlight(json) {
+	      return JSON ? JSON.stringify(json, null, '  ') : 'your browser doesnt support JSON so cant pretty print';
+	    }
+	    return syntaxHighlight;
+	});
+})();

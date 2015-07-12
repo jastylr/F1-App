@@ -1,6 +1,6 @@
-
+<div cg-busy="{promise:nextRacePromise}"></div>
 <div class="jumbotron">
-  <div ng-init="getNextRace()" ng-show="nextRace" class="upcoming">
+  <div ng-init="getNextRace()" class="upcoming">
     <h3>Next Race: <strong>Round {{nextRace.round}}<br> <img ng-src="images/flags/{{nextRace.Circuit.Location.country}}.png" alt=""> {{nextRace.season}} {{nextRace.raceName}}</strong></h3>
     <p>{{nextRace.date|date:'EEEE, MMMM d, y'}} - {{nextRace.time|date:'shortTime' : 'UTC'}}</p>
     <div class="countdown">
@@ -31,6 +31,7 @@
     </div>
   </div>
   <div class="col-md-12" ng-init="getRaceResults('2015')">
+    <div cg-busy="{promise:resultsPromise}"></div>
     <h2>{{raceseason}} Race Results</h2>
     <ul class="list-unstyled" ng-show="raceResults">
       <li ng-repeat="race in raceResults | filter: searchFilter" ng-mouseenter="hover(race)" ng-mouseleave="hover(race)">

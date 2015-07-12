@@ -1,6 +1,9 @@
 'use strict';
 
-app.factory('ergastAPIservice', function($http) {
+(function() {
+  var app = angular.module('F1App');
+
+  app.factory('ergastAPIservice', function($http) {
 
     var ergastAPI = {};
 
@@ -73,3 +76,4 @@ app.factory('ergastAPIservice', function($http) {
 
     return ergastAPI;
   });
+})();

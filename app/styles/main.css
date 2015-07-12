@@ -51,6 +51,10 @@ input, button, select, textarea {
   font-weight: 300;
 }
 
+.padding-none {
+  padding: 0 !important;
+}
+
 .padding-sm {
   padding: 5px !important;
 }
@@ -73,7 +77,7 @@ input, button, select, textarea {
 }
 
 .logo-sm {
-  width: 160px;
+  width: 180px;
 }
 
 .video-bg {
@@ -420,6 +424,10 @@ h3.race-title {
 
 .driver {
   text-align: center;
+}
+
+.driver-img {
+  padding: 5px;
 }
 
 .driver a {
