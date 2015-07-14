@@ -422,15 +422,18 @@ h3.race-title {
   margin-bottom: 20px;
 }
 
-.driver {
+.driver,
+.constructor {
   text-align: center;
 }
 
-.driver-img {
+.driver-img,
+.constructor-img {
   padding: 5px;
 }
 
-.driver a {
+.driver a,
+.constructor a {
   color: #fff;
   font-size: 1.2em;
 }
@@ -441,20 +444,24 @@ h3.race-title {
   margin: 0 0 20px 0;
 }
 
-.driver-title a {
+.driver-title a,
+.constructor-title a {
   display: block;
   font-size: 1.1em !important;
   margin: 10px 0;
 }
 
-.driver-stats .stat {
+.driver-stats .stat,
+.constructor-stats .stat {
   display: inline-block;
   vertical-align: top;
   width: 30%;
 }
 
 .driver-stats .stat small,
-.driver-stats .stat strong {
+.driver-stats .stat strong,
+.constructor-stats .stat small,
+.constructor-stats .stat strong {
   display: block;
 }
 

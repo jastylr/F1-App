@@ -69,18 +69,9 @@
 
     $scope.pageClass = 'page-race-result';
 
-  //////// TEST 
-    // ergastAPIservice.getRaceResults('2015').success(function (response) {
-    //   $scope.raceResults = response.MRData.RaceTable.Races.reverse();
-    //   var result = $filter('filter')($scope.raceResults, { season: $scope.season, round: $scope.round });
-    //   $scope.raceResult = result[0];
-    //   $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + $scope.raceResult.Results[0].Driver.familyName + ' ' + $scope.raceResult.season + ' ' + $scope.raceResult.raceName)
-    //   console.log($scope.raceResult);
-    // });
-  //////// END TEST
-
     // Get results for a particular race.
-    $scope.resultPromise = ergastAPIservice.getRaceResult($scope.season, $scope.round).success(function (response) {
+    $scope.resultPromise = ergastAPIservice.getRaceResult($scope.season, $scope.round)
+      .success(function (response) {
         // Save the race data in $scope.raceResult
         $scope.raceResult = response.MRData.RaceTable.Races[0];
         
@@ -88,7 +79,8 @@
         // the winning driver's name, the season and the name of the race and returns any matching
         // photos from the Flickr service
         $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + $scope.raceResult.Results[0].Driver.familyName + ' ' + $scope.raceResult.season + ' ' + $scope.raceResult.raceName);
-    });
+      }
+    );
 
     // Call the Flickr API service to return a set of photos matching our search string
     $scope.getRacePhotos = function(race) {

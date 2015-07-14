@@ -29,9 +29,9 @@
         // Make a call to the Wiki API to retrive driver bio information
         $scope.driverBio = function(driver) {
             wikiService.get(driver).then(function(data) {
-                var pageId = data.data.query.pageids[0];
-                $scope.wikiData = data.data.query.pages[pageId].extract;
-                $scope.wikiUrl = data.data.query.pages[pageId].canonicalurl;
+                //var pageId = data.data.query.pageids[0];
+                $scope.wikiData = data.data.query.pages[0].extract;
+                $scope.wikiUrl = data.data.query.pages[0].canonicalurl;
             });
         };
 

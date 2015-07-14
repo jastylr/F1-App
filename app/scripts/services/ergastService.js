@@ -7,12 +7,12 @@
 
     var ergastAPI = {};
 
-    ergastAPI.getRaceResults = function(year) {
-      year = year === undefined ? 'current' : year;
+    ergastAPI.getRaceResults = function(season) {
+      season = season === undefined ? 'current' : season;
       
       return $http({
         method: 'JSONP', 
-        url: 'http://ergast.com/api/f1/' + year + '/results/1.json?callback=JSON_CALLBACK',
+        url: 'http://ergast.com/api/f1/' + season + '/results/1.json?callback=JSON_CALLBACK',
         cache: true
       });
     };
@@ -70,6 +70,35 @@
       return $http({
         method: 'JSONP', 
         url: 'http://ergast.com/api/f1/circuits/' + id + '.json?callback=JSON_CALLBACK',
+        cache: true
+      });
+    };
+
+    ergastAPI.getConstructors = function(season) {
+
+      season = season === undefined ? 'current' : season;
+
+      return $http({
+        method: 'JSONP', 
+        url: 'http://ergast.com/api/f1/' + season + '/constructors.json?callback=JSON_CALLBACK',
+        cache: true
+      });
+    };
+
+    ergastAPI.getConstructors = function() {
+
+      return $http({
+        method: 'JSONP', 
+        url: 'http://ergast.com/api/f1/current/constructorStandings.json?callback=JSON_CALLBACK',
+        cache: true
+      });
+    };
+
+    ergastAPI.getConstructor = function(id) {
+
+      return $http({
+        method: 'JSONP', 
+        url: 'http://ergast.com/api/f1/constructors/' + id + '.json?callback=JSON_CALLBACK',
         cache: true
       });
     };

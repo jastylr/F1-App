@@ -53,6 +53,14 @@
           templateUrl: 'views/circuitDetail.html',
           controller: 'CircuitController'
         })
+        .when('/constructors', {
+          templateUrl: 'views/constructorList.html',
+          controller: 'ConstructorsController'
+        })
+        .when('/constructors/:id', {
+          templateUrl: 'views/constructorDetail.html',
+          controller: 'ConstructorController'
+        })
         .when('/about', {
           templateUrl: 'views/about.html'
         })
