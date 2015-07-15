@@ -32,11 +32,12 @@
 
 	  	// Call the Wikipedia API to get information on the circuit and limit the response
 	  	// to 2500 characters
-	    var search = $scope.circuit.circuitName;
+	    //var search = $scope.circuit.circuitName;
+	    var search = $scope.circuit.url.substring($scope.circuit.url.lastIndexOf('/')+1);
 	    wikiService.get(search).success(function(response) {
 	    	var pageId = response.query.pageids[0];
-	    	$scope.circuitInfo = $filter('limitTo')(response.query.pages[pageId].extract, 2500);
-	    	$scope.wikiUrl = response.query.pages[pageId].canonicalurl;
+	    	$scope.circuitInfo = $filter('limitTo')(response.query.pages[0].extract, 2500);
+	    	$scope.wikiUrl = response.query.pages[0].canonicalurl;
 	    });
 	  });
 	});
