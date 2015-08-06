@@ -1,10 +1,11 @@
 <div class="row">
   <div class="col-md-12">
-  	<div cg-busy="{promise:circuitPromise}"></div>
+  	<div cg-busy="[circuitPromise, wikiPromise]"></div>
   	<div class="content clearfix" ng-if="circuitPromise">
 	  	<h1>{{circuit.circuitName}}</h1>
 	  	<div class="circuit-map">
 	  		<img ng-src="images/circuits/{{circuit.circuitId}}.png" alt="{{circuit.circuitName}}">
+	  		<h4>{{circuit.Location.locality + ', ' + circuit.Location.country }}</h4>
 	  	</div>
 	  	<div area-based-google-map area="Area" mapview="satellite" zoom="15"></div>
 			<div ng-bind-html="circuitInfo"></div>

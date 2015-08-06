@@ -78,7 +78,9 @@
         // Call the getRacePhotos method which takes a search string paramter which I set to
         // the winning driver's name, the season and the name of the race and returns any matching
         // photos from the Flickr service
-        $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + $scope.raceResult.Results[0].Driver.familyName + ' ' + $scope.raceResult.season + ' ' + $scope.raceResult.raceName);
+        $scope.getRacePhotos($scope.raceResult.Results[0].Driver.givenName + ' ' + 
+                            $scope.raceResult.Results[0].Driver.familyName + ' ' + 
+                            $scope.raceResult.season + ' ' + $scope.raceResult.raceName);
       }
     );
 

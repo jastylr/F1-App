@@ -34,7 +34,7 @@
 	  	// to 2500 characters
 	    //var search = $scope.circuit.circuitName;
 	    var search = $scope.circuit.url.substring($scope.circuit.url.lastIndexOf('/')+1);
-	    wikiService.get(search).success(function(response) {
+	    $scope.wikiPromise = wikiService.get(search).success(function(response) {
 	    	$scope.circuitInfo = $filter('limitTo')(response.query.pages[0].extract, 2500);
 	    	$scope.wikiUrl = response.query.pages[0].canonicalurl;
 	    });

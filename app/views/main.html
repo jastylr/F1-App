@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="row content">
+<div class="row content" id="results">
   <div class="col-md-12">
     <h4>Filter Races</h4>
     <div class="filter-years btn-group" role="group" aria-label="...">
@@ -26,8 +26,9 @@
       <button ng-click="getRaceResults('2014')" type="button" class="btn btn-default" ng-class="{'btn-primary' : raceseason == '2014'}">2014</button>
       <button ng-click="getRaceResults('2013')" type="button" class="btn btn-default" ng-class="{'btn-primary' : raceseason == '2013'}">2013</button>
     </div>
-    <div class="filter-race-title"><input type="text" ng-model="raceFilter" placeholder="Search..."/>
-        <button type="button" class="btn btn-info" ng-click="clearFilter()">Clear</button>
+    <div class="filter-race-title">
+      <input type="text" ng-model="raceFilter" placeholder="Search..."/>
+      <button type="button" class="btn btn-info" ng-click="clearFilter()">Clear</button>
     </div>
   </div>
   <div class="col-md-12" ng-init="getRaceResults('2015')">
