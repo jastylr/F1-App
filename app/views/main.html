@@ -1,6 +1,6 @@
 <div cg-busy="{promise:nextRacePromise}"></div>
 <div class="jumbotron">
-  <div ng-init="getNextRace()" class="upcoming">
+  <div ng-init="getNextRace()" ng-if="nextRace != 0" class="upcoming">
     <h3>Next Race: <strong>Round {{nextRace.round}}<br> <img ng-src="images/flags/{{nextRace.Circuit.Location.country}}.png" alt=""> {{nextRace.season}} {{nextRace.raceName}}</strong></h3>
     <p>{{nextRace.date|date:'EEEE, MMMM d, y'}} - {{nextRace.time|date:'shortTime' : 'UTC'}}</p>
     <div class="countdown">
@@ -14,6 +14,15 @@
     <div class="race-circuit-map">
       <img ng-src="images/circuits/{{nextRace.Circuit.circuitId}}.png" alt="{{nextRace.Circuit.circuitName}}">
       <h4>{{nextRace.Circuit.circuitName}}, {{nextRace.Circuit.Location.locality}}, {{nextRace.Circuit.Location.country}}</h4>
+    </div>
+  </div>
+
+  <div ng-init="getLastRace()" ng-if="nextRace == 0" class="upcoming">
+    <h3>Last Race: <strong>Round {{lastRace.round}}<br> <img ng-src="images/flags/{{lastRace.Circuit.Location.country}}.png" alt=""> {{lastRace.season}} {{lastRace.raceName}}</strong></h3>
+    <p>{{lastRace.date|date:'EEEE, MMMM d, y'}} - {{lastRace.time|date:'shortTime' : 'UTC'}}</p>
+    <div class="race-circuit-map">
+      <img ng-src="images/circuits/{{lastRace.Circuit.circuitId}}.png" alt="{{lastRace.Circuit.circuitName}}">
+      <h4>{{lastRace.Circuit.circuitName}}, {{lastRace.Circuit.Location.locality}}, {{lastRace.Circuit.Location.country}}</h4>
     </div>
   </div>
 </div>

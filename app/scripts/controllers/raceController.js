@@ -30,6 +30,12 @@
         // to display a countdown timer on the main page
         $scope.nextRacePromise = ergastAPIservice.getNextRace().success(function (response) {
             
+          if (response.MRData.total == 0) {
+            $scope.nextRace = 0;
+            return;
+          }
+          else {
+
             // Get the date and time of the next race returned from the ergast API
             var raceDate = response.MRData.RaceTable.Races[0].date;
             var raceTime = response.MRData.RaceTable.Races[0].time;
@@ -40,8 +46,30 @@
             
             // Save the data for the next race so that we can display it
             $scope.nextRace = response.MRData.RaceTable.Races[0];
+          }
         });
       };
+
+      $scope.getLastRace = function() {
+        
+        // Retrive information about the next upcoming race and use it
+        // to display a countdown timer on the main page
+        $scope.lastRacePromise = ergastAPIservice.getLastRace().success(function (response) {
+            
+          // Get the date and time of the next race returned from the ergast API
+          var raceDate = response.MRData.RaceTable.Races[0].date;
+          var raceTime = response.MRData.RaceTable.Races[0].time;
+          
+          // Create a timestamp from the race date and time that will be
+          // used to provide a countdown time until the race starts
+          //$scope.countdown = moment.utc(raceDate + ' ' + raceTime);
+          
+          // Save the data for the next race so that we can display it
+          $scope.lastRace = response.MRData.RaceTable.Races[0];
+          
+        });
+      };
+
 
       // Clear the race search filter
       $scope.clearFilter = function() {

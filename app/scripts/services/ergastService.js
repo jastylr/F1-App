@@ -32,6 +32,13 @@
       });
     };
 
+    ergastAPI.getLastRace = function() {
+      return $http({
+        method: 'JSONP',
+        url: 'http://ergast.com/api/f1/2015/last.json?callback=JSON_CALLBACK'
+      });
+    };
+
     ergastAPI.getDrivers = function() {
       return $http({
         method: 'JSONP', 
