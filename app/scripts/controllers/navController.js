@@ -28,10 +28,10 @@
       "scroll", function() {
          //console.log(window.pageYOffset);
          if(window.pageYOffset > 85) {
-           $scope.navClass = 'header-sm';
+           $scope.navClass = 'sm';
            $scope.logoClass = 'logo-sm';
          } else {
-           $scope.navClass = 'header-lg';
+           $scope.navClass = 'lg';
            $scope.logoClass = 'logo-lg';
          }
          $scope.$apply();

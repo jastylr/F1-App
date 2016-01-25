@@ -1,0 +1,154 @@
+// _layout-desktop.scss
+//
+// Styles for the desktop version of the F1 App
+
+@media screen and (min-width: 768px) {
+  
+  .navbar {
+    margin-bottom: 0;
+    border: 1px solid #eee;
+  }
+  
+  // Adjust page top margin
+  .page {
+    margin-top: 220px;
+  }
+
+  // Change the header height when scrolling
+  .header {
+    background-size: 100%;
+    margin-bottom: 5px;
+	  
+	  &.lg {
+	    height: 180px;
+	  }
+	  
+	  &.sm {
+	    height: 120px;
+	  }
+	}
+
+  // The Jumbotron contains information for the Upcoming race
+  // or when the season is over, it shows the last race
+	.container .jumbotron {
+  	border-bottom: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto 30px;;
+  	position: relative;
+    
+    p {
+    	font-size: 21px;
+    }
+    
+    .upcoming h3 {
+      font-size: 1.8em;
+      margin-top: 0;
+      text-transform: uppercase;
+      
+      img {
+      	display: inline;
+        width: 40px;
+        margin: 0;
+      }
+    }
+  }
+  
+  .container-fluid .jumbotron {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  // Add some addition margin to the bottom of the logo
+  .logo {
+    margin-bottom: 15px;
+  }
+  
+  // Content styling
+  .content {
+    font-size: 1em;
+    margin-bottom: 30px;
+    min-height: 600px;
+    padding: 30px;
+  }
+
+  // Race countdown styling
+  .cnt-time-unit {
+    font-size: 3.4em;
+    margin-right: 20px;
+  }
+
+  // Styles for the race result blocks
+  .race-date-round, .race-header, .race-circuit-flag, .race-circuit {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .race-date-round {
+    max-width: 95px;
+    text-align: left;
+  }
+
+  .race-header > div {
+    text-align: left;
+  }
+
+  .race-circuit-flag {
+    margin: 0 15px 0 15px;
+  }
+
+  .race-circuit {
+    margin-right: 20px;
+  }
+
+  .race-circuit-name {
+    font-size: 1em;
+  }
+
+  .race-circuit-map-sm {
+    width: 80px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
+
+  .race-circuit-map h4 {
+    font-size: 18px;
+  }
+
+  .header, .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .race-result {
+    text-align: left;
+    
+    // Adjust the background position when hovering
+    // a race result
+    .hover-msg {
+      background-position: 95% 50%;
+    }
+  }
+
+  // Make the race filters horizontally aligned
+  .filter-years {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .filter-race-title {
+    display: inline-block;
+    vertical-align: middle;
+
+    input {
+      padding: 5px 3px;
+    }
+  }
+
+  .driver-bio-img {
+    max-width: 300px;
+    float: left;
+    margin: 0 20px 10px 0;
+  }
+}

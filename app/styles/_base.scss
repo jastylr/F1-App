@@ -1,0 +1,54 @@
+// Color variables
+$black: #000;
+$white: #fff;
+$grey-x-light: #eee;
+$grey-med: #666;
+
+// Font weights
+$light: 100;
+$normal: 400;
+$bold: 700;
+
+// Base Font
+$open-sans: "Open Sans", Arial, helvetica, sans-serif;
+$base-font-weight: $normal;
+
+
+// Function for returning an RGBA value with an opacity setting
+@function trans-black($opacity) {
+	@return rgba(black, $opacity)
+}
+
+body {
+  background: $grey-x-light;
+  font-family: $open-sans;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+input, button, select, textarea {
+  color: $grey-med;
+}
+
+.red {
+  color: #ff0000;
+  font-weight: $normal;
+}
+
+.padding-none {
+  padding: 0 !important;
+}
+
+.padding-sm {
+  padding: 5px !important;
+}
+
+
