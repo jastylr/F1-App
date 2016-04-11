@@ -145,6 +145,21 @@
   }
 }
 
+.cnt-time-unit {
+  display: inline-block;
+  font-size: 2.8em;
+  font-style: italic;
+  font-weight: bold;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.cnt-time-unit span {
+  display: block;
+  font-size: 0.3em;
+  font-weight: normal;
+}
+
 // Generic content styling
 .content {
   background-color: trans-black(0.6);
