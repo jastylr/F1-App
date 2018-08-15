@@ -18,8 +18,12 @@
         	
         	player.setPlaybackQuality(quality);
         };
+        $scope.muteVideo = function() {
+            player.mute();
+        }
 
         $scope.setQuality();
+        $scope.muteVideo();
     };
   });
 })();
