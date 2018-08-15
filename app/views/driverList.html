@@ -8,7 +8,7 @@
 	  			<div class="driver">
 		  			<div class="driver-img">
 		  				<a ng-href="#/drivers/{{driver.Driver.driverId}}">
-		  					<img ng-src="images/drivers/{{driver.Driver.driverId}}.jpg" alt="{{driver.Driver.givenName + ' ' + driver.Driver.familyName}}">
+		  					<img ng-src="images/drivers/{{driver.Driver.driverId}}.jpg" onError="this.src='images/driver-default.png';" alt="{{driver.Driver.givenName + ' ' + driver.Driver.familyName}}">
 		  				</a>
 		  			</div>
 			  		<div class="driver-title">
