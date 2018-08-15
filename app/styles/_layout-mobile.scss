@@ -32,15 +32,15 @@
   top: 0;
   z-index: 9999;
   transition: 0.5s linear all;
-  
+
   &.lg {
   	height: auto;
   }
-  
+
   &.sm {
   	height: auto;
   }
-  
+
   h3 {
   	margin-top: 0;
   	margin-bottom: 0;
@@ -72,7 +72,7 @@
   text-align: center;
   margin-bottom: 10px;
   margin-top: 10px;
-  
+
   img {
     transition: 0.5s linear all;
   }
@@ -121,23 +121,23 @@
   padding: 28px 15px;
   position: relative;
   text-align: center;
-  
+
   .btn {
     font-size: 21px;
     padding: 14px 24px;
   }
-  
+
   p {
     margin-bottom: 15px;
     font-size: 16px;
     font-weight: $light;
   }
-  
+
   .upcoming h3 {
     font-size: 1.8em;
     margin-top: 0;
     text-transform: uppercase;
-    
+
     img {
     	display: block;
       margin: 0 auto;
@@ -181,16 +181,16 @@
 // Race result styling
 .race-result {
   text-align: center;
-  
+
   table {
     text-align: left;
   }
-  
+
   a {
     display: block;
     color: $white;
     text-decoration: none;
-    
+
     &:hover {
       display: block;
       color: $white;
@@ -211,7 +211,7 @@
     bottom: 0;
     margin: 0 auto;
     z-index: 100;
-    
+
     p {
       margin: 0;
       line-height: 1em;
@@ -308,11 +308,11 @@ h3.race-title {
   margin-bottom: 10px;
   background-color: trans-black(0.5);
   border-radius: 20px;
-  
+
   a {
     text-decoration: none;
   }
-  
+
   &:hover {
     background-color: trans-black(0.9);
   }
@@ -320,6 +320,10 @@ h3.race-title {
 
 .circuit-map {
   text-align: center;
+}
+
+.circuit-map img {
+	height: 200px !important;
 }
 
 .circuit-flag {
@@ -331,7 +335,7 @@ h3.race-title {
   height: 6em;
   overflow: hidden;
   text-align: center;
-  
+
   h4 {
     color: $white;
     font-size: 1.2em;
@@ -340,7 +344,7 @@ h3.race-title {
     font-weight: $bold;
     overflow: hidden;
   }
-  
+
   span {
     color: $white;
   }
