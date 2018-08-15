@@ -1,1 +1,36 @@
-<div class="row"> <div class="col-md-12"> <div cg-busy="{promise:constructorPromise}"></div> <div class="content clearfix" ng-if="constructorPromise"> <h1>Constructors</h1> <div class="col-md-4 col-sm-6 padding-sm" ng-repeat="constructor in constructors"> <div class="circuit"> <div class="constructor"> <div class="constructor-img"> <a ng-href="#/constructors/{{constructor.Constructor.constructorId}}"> <img ng-src="images/cars/{{constructor.Constructor.constructorId}}.png" alt="{{constructor.Constructor.name}}"> </a> </div> <div class="constructor-title"> <h4><a ng-href="#/constructors/{{constructor.Constructors.constructorId}}">{{constructor.Constructor.name}}</a></h4> </div> <div class="constructor-stats"> <div class="stat"> <small>Place</small> <strong>{{constructor.position}}</strong> </div> <div class="stat"> <small>Wins</small> <strong>{{constructor.wins}}</strong> </div> <div class="stat"> <small>Points</small> <strong>{{constructor.points}}</strong> </div> </div> </div> </div> </div> </div> </div> </div>
+<div class="row">
+  <div class="col-md-12">
+  	<div cg-busy="{promise:constructorPromise}"></div>
+  	<div class="content clearfix" ng-if="constructorPromise">
+	  	<h1>Constructors</h1>
+	  	<div class="col-md-4 col-sm-6 padding-sm" ng-repeat="constructor in constructors">
+	  		<div class="circuit">
+	  			<div class="constructor">
+		  			<div class="constructor-img">
+		  				<a ng-href="#/constructors/{{constructor.Constructor.constructorId}}">
+		  					<img ng-src="images/cars/{{constructor.Constructor.constructorId}}.png" alt="{{constructor.Constructor.name}}">
+		  				</a>
+		  			</div>
+			  		<div class="constructor-title">
+			  			<h4><a ng-href="#/constructors/{{constructor.Constructors.constructorId}}">{{constructor.Constructor.name}}</a></h4>
+			  		</div>
+			  		<div class="constructor-stats">
+			  			<div class="stat">
+			  				<small>Place</small>
+			  				<strong>{{constructor.position}}</strong>
+			  			</div>
+			  			<div class="stat">
+			  				<small>Wins</small>
+			  				<strong>{{constructor.wins}}</strong>
+			  			</div>
+			  			<div class="stat">
+			  				<small>Points</small>
+			  				<strong>{{constructor.points}}</strong>
+			  			</div>
+			  		</div>
+			  	</div>
+			  </div>
+	  	</div>
+	  </div>
+  </div>
+</div>
